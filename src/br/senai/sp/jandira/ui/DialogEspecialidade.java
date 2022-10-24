@@ -79,8 +79,8 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         jPanel1.add(LabelIcon);
         LabelIcon.setBounds(30, 20, 30, 40);
 
-        tituloLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        tituloLabel.setForeground(new java.awt.Color(0, 153, 255));
+        tituloLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 24)); // NOI18N
+        tituloLabel.setForeground(new java.awt.Color(255, 153, 204));
         tituloLabel.setText("Especialidade - ADICIONAR");
         jPanel1.add(tituloLabel);
         tituloLabel.setBounds(70, 25, 660, 30);
@@ -102,6 +102,11 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         textFieldNomeDaEspecialidade.setBounds(40, 130, 280, 30);
 
         textFieldCodigo.setEditable(false);
+        textFieldCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldCodigoActionPerformed(evt);
+            }
+        });
         jPanel2.add(textFieldCodigo);
         textFieldCodigo.setBounds(40, 70, 80, 30);
 
@@ -119,9 +124,9 @@ public class DialogEspecialidade extends javax.swing.JDialog {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 255));
-        jLabel4.setText("Código:");
+        jLabel4.setText("código:");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(40, 50, 50, 20);
+        jLabel4.setBounds(50, 70, 50, 20);
 
         buttonSalvar.setBackground(new java.awt.Color(255, 255, 254));
         buttonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/salvar.png"))); // NOI18N
@@ -144,7 +149,7 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         buttonCancelar.setBounds(680, 310, 50, 40);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(20, 110, 750, 360);
+        jPanel2.setBounds(20, 100, 750, 360);
 
         setBounds(0, 0, 805, 528);
     }// </editor-fold>//GEN-END:initComponents
@@ -168,6 +173,10 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         }
 
     }//GEN-LAST:event_buttonSalvarActionPerformed
+
+    private void textFieldCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCodigoActionPerformed
 
     private void gravar() {
         // Criar um objeto plano de saúde
