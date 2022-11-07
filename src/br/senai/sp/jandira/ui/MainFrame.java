@@ -22,7 +22,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-        PlanoDeSaudeDAO.criarPlanosDeSaudeTeste();
+        PlanoDeSaudeDAO.getListaPlanosDeSaude();
         EspecialidadeDAO.criarEspecialidadesTeste();
         initPanels();
     }
@@ -51,8 +51,6 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         tituloLabel = new javax.swing.JLabel();
         iconLabel = new javax.swing.JLabel();
-        buttonSair = new javax.swing.JButton();
-        buttonHome = new javax.swing.JButton();
         buttonAgenda = new javax.swing.JButton();
         buttonPacientes = new javax.swing.JButton();
         buttonMedicos = new javax.swing.JButton();
@@ -64,6 +62,8 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        buttonSair = new javax.swing.JButton();
+        buttonHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Agendamento de Consultas");
@@ -73,47 +73,22 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
-        tituloLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
-        tituloLabel.setForeground(new java.awt.Color(0, 153, 255));
+        tituloLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 24)); // NOI18N
+        tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
         tituloLabel.setText("Sistema de Agendamento de Consultas");
         jPanel2.add(tituloLabel);
         tituloLabel.setBounds(90, 10, 660, 70);
 
-        iconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/agendar.png"))); // NOI18N
+        iconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/planejamento (1).png"))); // NOI18N
         jPanel2.add(iconLabel);
-        iconLabel.setBounds(10, 10, 70, 70);
+        iconLabel.setBounds(20, 0, 70, 70);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 940, 90);
 
-        buttonSair.setBackground(new java.awt.Color(254, 255, 255));
-        buttonSair.setForeground(new java.awt.Color(255, 51, 51));
-        buttonSair.setText("Sair");
-        buttonSair.setBorder(null);
-        buttonSair.setFocusable(false);
-        buttonSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSairActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buttonSair);
-        buttonSair.setBounds(840, 100, 90, 40);
-
-        buttonHome.setBackground(new java.awt.Color(228, 228, 228));
-        buttonHome.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        buttonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/home.png"))); // NOI18N
-        buttonHome.setBorder(null);
-        buttonHome.setFocusable(false);
-        buttonHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonHomeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buttonHome);
-        buttonHome.setBounds(40, 100, 50, 40);
-
         buttonAgenda.setBackground(new java.awt.Color(254, 255, 255));
         buttonAgenda.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        buttonAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/agenda.png"))); // NOI18N
         buttonAgenda.setText("Agenda");
         buttonAgenda.setBorder(null);
         buttonAgenda.setFocusable(false);
@@ -123,10 +98,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonAgenda);
-        buttonAgenda.setBounds(160, 100, 110, 40);
+        buttonAgenda.setBounds(130, 100, 100, 40);
 
         buttonPacientes.setBackground(new java.awt.Color(254, 255, 255));
         buttonPacientes.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        buttonPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/grupo-de-usuarios.png"))); // NOI18N
         buttonPacientes.setText("Pacientes");
         buttonPacientes.setToolTipText("");
         buttonPacientes.setBorder(null);
@@ -137,10 +113,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonPacientes);
-        buttonPacientes.setBounds(280, 100, 110, 40);
+        buttonPacientes.setBounds(250, 100, 110, 40);
 
         buttonMedicos.setBackground(new java.awt.Color(254, 255, 255));
         buttonMedicos.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        buttonMedicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/medico.png"))); // NOI18N
         buttonMedicos.setText("Médicos");
         buttonMedicos.setBorder(null);
         buttonMedicos.setFocusable(false);
@@ -150,10 +127,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonMedicos);
-        buttonMedicos.setBounds(400, 100, 110, 40);
+        buttonMedicos.setBounds(380, 100, 110, 40);
 
         buttonEspecialidades.setBackground(new java.awt.Color(254, 255, 255));
         buttonEspecialidades.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        buttonEspecialidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/pesquisa.png"))); // NOI18N
         buttonEspecialidades.setText("Especialidades");
         buttonEspecialidades.setBorder(null);
         buttonEspecialidades.setFocusable(false);
@@ -163,10 +141,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonEspecialidades);
-        buttonEspecialidades.setBounds(520, 100, 110, 40);
+        buttonEspecialidades.setBounds(510, 100, 130, 40);
 
         buttonPlanosDeSaude.setBackground(new java.awt.Color(254, 255, 255));
         buttonPlanosDeSaude.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        buttonPlanosDeSaude.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/plano-de-saude.png"))); // NOI18N
         buttonPlanosDeSaude.setText("Planos de Saúde");
         buttonPlanosDeSaude.setBorder(null);
         buttonPlanosDeSaude.setFocusable(false);
@@ -176,41 +155,67 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonPlanosDeSaude);
-        buttonPlanosDeSaude.setBounds(640, 100, 110, 40);
+        buttonPlanosDeSaude.setBounds(660, 100, 140, 40);
 
         panelHome.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HOME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Light", 1, 18), new java.awt.Color(0, 153, 255))); // NOI18N
         panelHome.setFocusCycleRoot(true);
         panelHome.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 2, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 3, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText("SISACON");
         panelHome.add(jLabel1);
-        jLabel1.setBounds(40, 50, 640, 64);
+        jLabel1.setBounds(50, 50, 640, 64);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         jLabel2.setText("Sistema para Agendamento de Consultas");
         panelHome.add(jLabel2);
         jLabel2.setBounds(40, 100, 330, 30);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 2, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 153));
         jLabel3.setText("Dados para contato:");
         panelHome.add(jLabel3);
         jLabel3.setBounds(40, 230, 180, 25);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel4.setText("Telefone: (11)98877-5183");
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
+        jLabel4.setText("Telefone: (11)98251-8335");
         panelHome.add(jLabel4);
         jLabel4.setBounds(40, 280, 240, 20);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel5.setText("E-mail: eduardorpimentaa@gmail.com");
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
+        jLabel5.setText("E-mail: ribeirostephany750@gmail.com");
         panelHome.add(jLabel5);
         jLabel5.setBounds(40, 260, 240, 20);
 
+        buttonSair.setForeground(new java.awt.Color(255, 51, 51));
+        buttonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/sair.png"))); // NOI18N
+        buttonSair.setText("Sair");
+        buttonSair.setBorder(null);
+        buttonSair.setFocusable(false);
+        buttonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSairActionPerformed(evt);
+            }
+        });
+        panelHome.add(buttonSair);
+        buttonSair.setBounds(730, 340, 90, 40);
+
         getContentPane().add(panelHome);
-        panelHome.setBounds(30, 170, 890, 390);
+        panelHome.setBounds(10, 150, 890, 390);
+
+        buttonHome.setBackground(new java.awt.Color(228, 228, 228));
+        buttonHome.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        buttonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/casa.png"))); // NOI18N
+        buttonHome.setBorder(null);
+        buttonHome.setFocusable(false);
+        buttonHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buttonHome);
+        buttonHome.setBounds(50, 100, 50, 40);
 
         setBounds(0, 0, 955, 618);
     }// </editor-fold>//GEN-END:initComponents

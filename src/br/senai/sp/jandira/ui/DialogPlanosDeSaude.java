@@ -38,7 +38,7 @@ public class DialogPlanosDeSaude extends javax.swing.JDialog {
 
     private void preencherFormulario() {
         tituloLabel.setText("Plano de Saúde - " + tipoOperacao);
-        LabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/edit.png")));
+        
         textFieldCodigo.setText(planoDeSaude.getCodigo().toString());
         textFieldNomeDaOperadora.setText(planoDeSaude.getOperadora());
         textFieldTipoDoPlano.setText(planoDeSaude.getTipoDoPlano());
@@ -75,15 +75,15 @@ public class DialogPlanosDeSaude extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        LabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/add.png"))); // NOI18N
+        LabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/pasta (5).png"))); // NOI18N
         jPanel1.add(LabelIcon);
-        LabelIcon.setBounds(30, 20, 30, 40);
+        LabelIcon.setBounds(20, 10, 90, 60);
 
-        tituloLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        tituloLabel.setForeground(new java.awt.Color(0, 153, 255));
+        tituloLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 24)); // NOI18N
+        tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
         tituloLabel.setText("Planos de Saude - ADICIONAR");
         jPanel1.add(tituloLabel);
-        tituloLabel.setBounds(70, 25, 660, 30);
+        tituloLabel.setBounds(90, 30, 660, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 790, 90);
@@ -105,43 +105,43 @@ public class DialogPlanosDeSaude extends javax.swing.JDialog {
         jPanel2.add(textFieldCodigo);
         textFieldCodigo.setBounds(40, 70, 80, 30);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("Tipo do Plano:");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(40, 170, 90, 20);
+        jLabel2.setBounds(40, 170, 110, 20);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 153));
         jLabel3.setText("Nome da Operadora:");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(40, 110, 130, 20);
+        jLabel3.setBounds(40, 110, 150, 20);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 153, 153));
         jLabel4.setText("Código:");
         jPanel2.add(jLabel4);
         jLabel4.setBounds(40, 50, 50, 20);
 
         buttonSalvar.setBackground(new java.awt.Color(255, 255, 254));
-        buttonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/salvar.png"))); // NOI18N
+        buttonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/disquete (2).png"))); // NOI18N
         buttonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonSalvarActionPerformed(evt);
             }
         });
         jPanel2.add(buttonSalvar);
-        buttonSalvar.setBounds(620, 310, 50, 40);
+        buttonSalvar.setBounds(600, 290, 60, 60);
 
         buttonCancelar.setBackground(new java.awt.Color(255, 255, 254));
-        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/cancelar.png"))); // NOI18N
+        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/icon.delete.png"))); // NOI18N
         buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCancelarActionPerformed(evt);
             }
         });
         jPanel2.add(buttonCancelar);
-        buttonCancelar.setBounds(680, 310, 50, 40);
+        buttonCancelar.setBounds(670, 290, 60, 60);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(20, 110, 750, 360);

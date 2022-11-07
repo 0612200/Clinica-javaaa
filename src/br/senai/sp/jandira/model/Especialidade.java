@@ -49,5 +49,7 @@ public class Especialidade {
     public Integer getCodigo() {
         return codigo;
     }
+    
+     
 
 }

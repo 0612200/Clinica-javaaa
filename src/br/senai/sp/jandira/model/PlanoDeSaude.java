@@ -25,6 +25,18 @@ public class PlanoDeSaude {
 		this.codigo = contador;
 		contador++;
 	}
+        
+        public PlanoDeSaude(Integer codigo, String operadora, String tipoDoPlano){
+            this.codigo = codigo;
+            this.operadora = operadora;
+            this.tipoDoPlano = tipoDoPlano;
+            contador = this.codigo++;
+        }
+        
+        private void atualizarCodigo(){
+            contador++;
+            this.codigo = contador;
+        }
 	
 	//Métodos de acesso
 	//  ***Pegar Operadora***
@@ -64,6 +76,9 @@ public class PlanoDeSaude {
             return codigo;
         }
 	
+        public String getPlanoDeSaudeSeparardoPorPontoEVirgula(){
+            return this.codigo + ";" + this.operadora + ";" + this.tipoDoPlano;
+        }
         
 
 }

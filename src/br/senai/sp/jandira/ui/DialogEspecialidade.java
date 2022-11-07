@@ -38,7 +38,6 @@ public class DialogEspecialidade extends javax.swing.JDialog {
 
     private void preencherFormulario() {
         tituloLabel.setText("Especialidade - " + tipoOperacao);
-        LabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/edit.png")));
         textFieldCodigo.setText(especialidade.getCodigo().toString());
         textFieldNomeDaEspecialidade.setText(especialidade.getNome());
         textFieldDescricao.setText(especialidade.getDescricao());
@@ -54,8 +53,8 @@ public class DialogEspecialidade extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        LabelIcon = new javax.swing.JLabel();
         tituloLabel = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         textFieldDescricao = new javax.swing.JTextField();
         textFieldNomeDaEspecialidade = new javax.swing.JTextField();
@@ -63,8 +62,9 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        buttonSalvar = new javax.swing.JButton();
-        buttonCancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Adicionar");
@@ -75,20 +75,21 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        LabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/add.png"))); // NOI18N
-        jPanel1.add(LabelIcon);
-        LabelIcon.setBounds(30, 20, 30, 40);
-
         tituloLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 24)); // NOI18N
-        tituloLabel.setForeground(new java.awt.Color(255, 153, 204));
+        tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
         tituloLabel.setText("Especialidade - ADICIONAR");
         jPanel1.add(tituloLabel);
-        tituloLabel.setBounds(70, 25, 660, 30);
+        tituloLabel.setBounds(110, 20, 660, 30);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/agenda (1).png"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(30, 10, 64, 64);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 790, 90);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Detalhes da Especialidade:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Light", 1, 18), new java.awt.Color(0, 153, 255))); // NOI18N
+        jPanel2.setForeground(new java.awt.Color(255, 153, 153));
         jPanel2.setLayout(null);
 
         textFieldDescricao.addActionListener(new java.awt.event.ActionListener() {
@@ -110,14 +111,14 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         jPanel2.add(textFieldCodigo);
         textFieldCodigo.setBounds(40, 70, 80, 30);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("Descrição:");
         jPanel2.add(jLabel2);
         jLabel2.setBounds(40, 170, 70, 20);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 153));
         jLabel3.setText("Nome da Especialidade:");
         jPanel2.add(jLabel3);
         jLabel3.setBounds(40, 110, 150, 20);
@@ -128,28 +129,32 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         jPanel2.add(jLabel4);
         jLabel4.setBounds(50, 70, 50, 20);
 
-        buttonSalvar.setBackground(new java.awt.Color(255, 255, 254));
-        buttonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/salvar.png"))); // NOI18N
-        buttonSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSalvarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(buttonSalvar);
-        buttonSalvar.setBounds(620, 310, 50, 40);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel1.setText(" Código:");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(40, 50, 70, 20);
 
-        buttonCancelar.setBackground(new java.awt.Color(255, 255, 254));
-        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/cancelar.png"))); // NOI18N
-        buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/icon.delete.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCancelarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(buttonCancelar);
-        buttonCancelar.setBounds(680, 310, 50, 40);
+        jPanel2.add(jButton1);
+        jButton1.setBounds(650, 290, 70, 50);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/disquete (2).png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2);
+        jButton2.setBounds(580, 290, 60, 50);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(20, 100, 750, 360);
+        jPanel2.setBounds(0, 100, 750, 360);
 
         setBounds(0, 0, 805, 528);
     }// </editor-fold>//GEN-END:initComponents
@@ -158,25 +163,23 @@ public class DialogEspecialidade extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldDescricaoActionPerformed
 
-    private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
+    private void textFieldCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCodigoActionPerformed
 
-        dispose();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                dispose();        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    }//GEN-LAST:event_buttonCancelarActionPerformed
-
-    private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
-
-        if (tipoOperacao == tipoOperacao.ADICIONAR) {
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+if (tipoOperacao == tipoOperacao.ADICIONAR) {
             gravar();
         } else {
             atualizar();
         }
 
-    }//GEN-LAST:event_buttonSalvarActionPerformed
-
-    private void textFieldCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldCodigoActionPerformed
+      
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void gravar() {
         // Criar um objeto plano de saúde
@@ -233,12 +236,13 @@ public class DialogEspecialidade extends javax.swing.JDialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelIcon;
-    private javax.swing.JButton buttonCancelar;
-    private javax.swing.JButton buttonSalvar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField textFieldCodigo;

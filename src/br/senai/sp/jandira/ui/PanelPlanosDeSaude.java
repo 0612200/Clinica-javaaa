@@ -52,7 +52,7 @@ public class PanelPlanosDeSaude extends javax.swing.JPanel {
 
         buttonEditar.setBackground(new java.awt.Color(255, 255, 254));
         buttonEditar.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        buttonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/edit.png"))); // NOI18N
+        buttonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/caneta.png"))); // NOI18N
         buttonEditar.setToolTipText("editar plano de saúde selecionado ");
         buttonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +64,7 @@ public class PanelPlanosDeSaude extends javax.swing.JPanel {
 
         buttonAdicionar.setBackground(new java.awt.Color(255, 255, 254));
         buttonAdicionar.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        buttonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/add.png"))); // NOI18N
+        buttonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/adicionar-ficheiro.png"))); // NOI18N
         buttonAdicionar.setToolTipText("adicionar plano de saúde");
         buttonAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +76,7 @@ public class PanelPlanosDeSaude extends javax.swing.JPanel {
 
         buttonExcluir.setBackground(new java.awt.Color(255, 255, 254));
         buttonExcluir.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        buttonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/delete.png"))); // NOI18N
+        buttonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/excluir.png"))); // NOI18N
         buttonExcluir.setToolTipText("deletar plano de saúde selecionado");
         buttonExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         buttonExcluir.addActionListener(new java.awt.event.ActionListener() {

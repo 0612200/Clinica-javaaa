@@ -1,7 +1,14 @@
 package br.senai.sp.jandira.dao;
 
 import br.senai.sp.jandira.model.Especialidade;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class EspecialidadeDAO {
@@ -9,8 +16,37 @@ public class EspecialidadeDAO {
     private Especialidade especialidade;
     private static ArrayList<Especialidade> especialidades = new ArrayList();
 
-    public EspecialidadeDAO(Especialidade especialidade) {
+    public EspecialidadeDAO(Especialidade especialidade) throws IOException {
         this.especialidade = especialidade;
+        
+        // Gravar a especialidade no arquivo Especialidade.txt
+        
+        String caminho = "C:\\Users\\22282122\\java projetos";
+        
+        // Abrir arquivo  em modo escrita
+        
+        Path path = Paths.get(caminho);
+        
+        try{
+            // Criar um buffer de escrita
+            BufferedWriter bw = Files.newBufferedWriter(path,
+                StandardOpenOption.APPEND,
+                StandardOpenOption.WRITE);
+            
+             bw.write("ola, conteudo gravado!!");
+        bw.newLine();
+        bw.write("ola,conteudo gravado!!");
+        bw.newLine();
+        bw.write("100;Jandira;Senai;Centro;(11)6532-9856");
+        bw.close();
+        
+        } catch (IOException erro) {
+        JOptionPane.showConfirmDialog(null, "Teste");
+    }
+        }
+        
+    {
+        
     }
 
     public EspecialidadeDAO() {
