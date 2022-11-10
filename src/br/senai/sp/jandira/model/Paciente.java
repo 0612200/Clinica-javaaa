@@ -6,10 +6,6 @@ public class Paciente {
 	// atributos
 	private String nome;
 	private LocalDate dataDeNascimento;
-	private Genero genero;
-	private Endereco endereco;
-	private String rg;
-	private String cpf;
 	private String telefone;
 	private String email;
 	private String tipoSanguineo;
@@ -41,60 +37,6 @@ public class Paciente {
 	public LocalDate getDataDeNascimento() {
 
 		return dataDeNascimento;
-
-	}
-
-	public void setGenero(Genero genero) {
-		
-		this.genero = genero;
-		
-	}
-	
-	public Genero getGenero() {
-		
-		return genero;
-		
-	}
-
-	// ***pegar endereço do paciente***
-	public void setEndereco(Endereco endereco) {
-
-		this.endereco = endereco;
-
-	}
-
-	// ***retorna endereço do paciente***
-	public Endereco getEndereco() {
-
-		return endereco;
-
-	}
-
-	// ***pegar rg do paciente***
-	public void setRg(String rg) {
-
-		this.rg = rg;
-
-	}
-
-	// ***retornar rg do paciente***
-	public String getRg() {
-
-		return rg;
-
-	}
-
-	// ***pegar cpf do paciente***
-	public void setCpf(String cpf) {
-
-		this.cpf = cpf;
-
-	}
-
-	// ***retornar cpf do paciente***
-	public String getCpf() {
-
-		return cpf;
 
 	}
 
